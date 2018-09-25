@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    {load href="__LAYUI__/css/layui.css" /}
+    {load href="__CSS__/admin/index.css" /}
+<script type="text/javascript">
+var ROOT_URL    = '{$Request.root}';
+var MODULE_NAME = '{$Request.module}';
+var CONTROLLER_NAME = '{$Request.controller}';
+var ACTION_NAME = '{$Request.action}';
+var ADD_LINK    = '{:url($Request.controller.'/add')}';
+var EDIT_LINK   = '{:url($Request.controller.'/edit')}';
+var DEL_LINK    = '{:url($Request.controller.'/del')}';
+var READ_LINK   = '{:url($Request.controller.'/read')}';
+</script>
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="cont">
+                <div class="layui-logo">layui 后台布局</div>
+                <!-- 头部区域（可配合layui已有的水平导航） -->
+                <ul class="layui-nav layui-layout-left">
+                    <li class="layui-nav-item"><a href="">控制台</a></li>
+                    <li class="layui-nav-item"><a href="">商品管理</a></li>
+                    <li class="layui-nav-item"><a href="">用户</a></li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">其它系统</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="">邮件管理</a></dd>
+                            <dd><a href="">消息管理</a></dd>
+                            <dd><a href="">授权管理</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+                <ul class="layui-nav layui-layout-right">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">
+                            <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                            {$admin_info.admin_name}
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="">基本资料</a></dd>
+                            <dd><a href="">安全设置</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="">退了</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-side side-bar">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree"  lay-filter="test" lay-shrink="all">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;"><i class="layui-icon layui-icon-read parent-icon"></i>文章</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" class="side-link" data-url="{:url('Article/add')}" data-target="tab_article" data-title="文章"><i class="layui-icon layui-icon-list"></i>写文章</a></dd>
+                            <dd><a href="javascript:;" class="side-link" data-url="{:url('Article/index')}" data-target="tab_article" data-title="文章"><i class="layui-icon layui-icon-list"></i>文章管理</a></dd>
+                            <dd><a href="javascript:;" class="side-link" data-url="{:url('Cate/index')}" data-target="tab_cate" data-title="文章类别"><i class="layui-icon layui-icon-list"></i>类别管理</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;"><i class="layui-icon layui-icon-template-1 parent-icon"></i>页面</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" class="side-link" data-url="{:url('Index/add')}" data-target="tab_page" data-title="页面"><i class="layui-icon layui-icon-list"></i>添加页面</a></dd>
+                            <dd><a href="javascript:;" class="side-link" data-url="{:url('Index/add')}" data-target="tab_page" data-title="页面"><i class="layui-icon layui-icon-list"></i>页面管理</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;"><i class="layui-icon layui-icon-user parent-icon"></i>管理员</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" class="side-link" data-url="{:url('Admins/index')}" data-target="tab_admins" data-title="管理员"><i class="layui-icon layui-icon-list"></i>管理员管理</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-body">
+            <div class="layui-tab layui-tab-brief" lay-allowClose="true" lay-filter="page-main">
+                <ul class="layui-tab-title" id="iframe-tab">
+                </ul>
+                <div class="layui-tab-content">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <div class="layui-icon ctrls layui-icon-prev"></div>
+            <div class="layui-icon ctrls layui-icon-refresh"></div>
+            <div class="layui-icon ctrls layui-icon-close"></div>
+            <!-- 底部固定区域 -->
+            <div style="text-align: center;">© layui.com - 底部固定区域</div>
+        </div>
+    </div>
+{load href="__LAYUI__/layui.js" /}
+<script type="text/javascript">
+layui.config({
+    base : '__JS__/admin/'
+}).use('index');
+</script>
+</body>
+</html>

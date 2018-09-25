@@ -1,0 +1,54 @@
+{include file="common/header" /}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md8">
+            <div class="layui-card">
+                <div class="layui-card-header">类别管理</div>
+                <div class="layui-card-body">
+                    <div>
+                        <button class="layui-btn layui-btn-warm layui-btn-sm btn-edit"><i class="layui-icon layui-icon-edit"></i>修改</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm btn-del"><i class="layui-icon layui-icon-delete"></i>删除</button>
+                    </div>
+                    <table class="layui-table" lay-data="{id:'table-grid', url:'{:url('Cate/index')}', page:false}" lay-filter="table-grid">
+                        <thead>
+                        <tr>
+                            <th lay-data="{checkbox:true, align:'center', fixed : 'left'}"></th>
+                            <th lay-data="{field:'id', width:80, sort: true, align:'center'}">ID</th>
+                            <th lay-data="{field:'topic'}">类别名称</th>
+                            <th lay-data="{field:'sort_id', align:'center', width:100}">排序</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">添加类别</div>
+                <div class="layui-card-body">
+                    <form class="layui-form" action="{:url('Cate/add')}" method="post">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">类别名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="topic" required lay-verify="required" placeholder="请输入类别名称"  autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">排序</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="sort_id" value="0" required lay-verify="required" placeholder="请输入排序ID"  autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="btnSub">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="common/footer" /}

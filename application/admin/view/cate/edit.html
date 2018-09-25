@@ -1,0 +1,29 @@
+{include file="common/header" /}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">修改类别</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="{:url('Cate/edit?id='.$vo['id'])}" method="post">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">类别名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="topic" value="{$vo.topic}" required lay-verify="required" placeholder="请输入类别名称"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">排序</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="sort_id" value="{$vo.sort_id}" maxlength="20" required lay-verify="required" placeholder="请输入排序ID"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="btnSub">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{include file="common/footer" /}

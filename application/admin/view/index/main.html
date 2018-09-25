@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    {load href="__LAYUI__/css/layui.css" /}
+    {load href="__CSS__/admin/default.css" /}
+<script type="text/javascript">
+var ROOT_URL    = '{$Request.root}';
+var MODULE_NAME = '{$Request.module}';
+var CONTROLLER_NAME = '{$Request.controller}';
+var ACTION_NAME = '{$Request.action}';
+var ADD_LINK    = '{:url($Request.controller.'/add')}';
+var EDIT_LINK   = '{:url($Request.controller.'/edit')}';
+var DEL_LINK    = '{:url($Request.controller.'/del')}';
+var READ_LINK   = '{:url($Request.controller.'/read')}';
+</script>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md8">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+          <div class="layui-card-header">版本信息</div>
+          <div class="layui-card-body layui-text">
+            <table class="layui-table">
+              <colgroup>
+                <col width="100">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>当前版本</td>
+                  <td>
+                    <script type="text/html" template="">
+                      v{{ layui.admin.v }}
+                      <a href="http://fly.layui.com/docs/3/" target="_blank" style="padding-left: 15px;">更新日志</a>
+                    </script> v1.1.0 std <a href="http://fly.layui.com/docs/3/" target="_blank" style="padding-left: 15px;">更新日志</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>基于框架</td>
+                  <td>
+                    <script type="text/html" template="">
+                      layui-v{{ layui.v }}
+                    </script> layui-v2.4.3
+                 </td>
+                </tr>
+                <tr>
+                  <td>主要特色</td>
+                  <td>零门槛 / 响应式 / 清爽 / 极简</td>
+                </tr>
+                <tr>
+                  <td>获取渠道</td>
+                  <td style="padding-bottom: 0;">
+                    <div class="layui-btn-container">
+                      <a href="http://www.layui.com/admin/" target="_blank" class="layui-btn layui-btn-danger">获取授权</a>
+                      <a href="http://fly.layui.com/download/layuiAdmin/" target="_blank" class="layui-btn">立即下载</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+                </div>
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+          <div class="layui-card-header">版本信息</div>
+          <div class="layui-card-body layui-text">
+            <table class="layui-table">
+              <colgroup>
+                <col width="100">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>当前版本</td>
+                  <td>
+                    <script type="text/html" template="">
+                      v{{ layui.admin.v }}
+                      <a href="http://fly.layui.com/docs/3/" target="_blank" style="padding-left: 15px;">更新日志</a>
+                    </script> v1.1.0 std <a href="http://fly.layui.com/docs/3/" target="_blank" style="padding-left: 15px;">更新日志</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>基于框架</td>
+                  <td>
+                    <script type="text/html" template="">
+                      layui-v{{ layui.v }}
+                    </script> layui-v2.4.3
+                 </td>
+                </tr>
+                <tr>
+                  <td>主要特色</td>
+                  <td>零门槛 / 响应式 / 清爽 / 极简</td>
+                </tr>
+                <tr>
+                  <td>获取渠道</td>
+                  <td style="padding-bottom: 0;">
+                    <div class="layui-btn-container">
+                      <a href="http://www.layui.com/admin/" target="_blank" class="layui-btn layui-btn-danger">获取授权</a>
+                      <a href="http://fly.layui.com/download/layuiAdmin/" target="_blank" class="layui-btn">立即下载</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+          <div class="layui-card-header">版本信息</div>
+          <div class="layui-card-body layui-text">
+            <table class="layui-table">
+              <colgroup>
+                <col width="100">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>当前版本</td>
+                  <td>
+                    <script type="text/html" template="">
+                      v{{ layui.admin.v }}
+                      <a href="http://fly.layui.com/docs/3/" target="_blank" style="padding-left: 15px;">更新日志</a>
+                    </script> v1.1.0 std <a href="http://fly.layui.com/docs/3/" target="_blank" style="padding-left: 15px;">更新日志</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>基于框架</td>
+                  <td>
+                    <script type="text/html" template="">
+                      layui-v{{ layui.v }}
+                    </script> layui-v2.4.3
+                 </td>
+                </tr>
+                <tr>
+                  <td>主要特色</td>
+                  <td>零门槛 / 响应式 / 清爽 / 极简</td>
+                </tr>
+                <tr>
+                  <td>获取渠道</td>
+                  <td style="padding-bottom: 0;">
+                    <div class="layui-btn-container">
+                      <a href="http://www.layui.com/admin/" target="_blank" class="layui-btn layui-btn-danger">获取授权</a>
+                      <a href="http://fly.layui.com/download/layuiAdmin/" target="_blank" class="layui-btn">立即下载</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        </div>
+    </div>
+</div>
+{include file="common/footer" /}

@@ -1,0 +1,61 @@
+{include file="common/header" /}
+<div class="blank-header"><!--站位标签--></div>
+<div class="header">
+    <div class="layui-container">
+        <div class="logo fl">
+            <h1><a href=""><img src="__IMG__/index/logo.png" alt=""></a></h1>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="/"{if 0 == $cate_id} class="cur"{/if}>首页</a></li>
+                {volist name="cate_list" id="vv"}
+                <li><a href="/cate-{$vv.id}.html"{if $vv.id == $cate_id} class="cur"{/if}>{$vv.topic}</a></li>
+                {/volist}
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="layui-container">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md8">
+            <div class="box">
+                {volist name="arr" id="vv"}
+                <div class="item">
+                    <div class="item-pic"><img src="__IMG__/index/l.jpg" alt=""></div>
+                    <div class="item-info">
+                        <div class="item-title">
+                            转行做产品经理
+                        </div>
+                        <div class="item-desc">
+                            最近气温骤降，秋天真的是要来啦，在这个换季的时候还在纠结要用什么护肤品和化妆品么？今天就带你走进美妆办公室的小姐姐都在用什么单品。最近气温骤降，秋天真的是要来啦，在这个换季的时候还在纠结要用什么护肤品和化妆品么？今天就带你走进美妆办公室的小姐姐都在用什么单品。
+                        </div>
+                        <div class="item-source">
+                            分类：<a href="">PHP程序</a>
+                        </div>
+                    </div>
+                    <div class="item-status">
+                        查看：0
+                    </div>
+                </div>
+                {/volist}
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="box">
+                <div class="hd">
+                    <h3>标题标题</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layui-fluid" style="padding: 0px;padding-top: 10px;">
+    <div class="footer">
+        <div class="layui-container">
+            <div class="footer-main">
+                fdsf
+            </div>
+        </div>
+    </div>
+</div>
+{include file="common/footer" /}

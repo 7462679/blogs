@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>系统登录</title>
+    {load href="__LAYUI__/css/layui.css" /}
+    <style type="text/css">
+    body{background: #4EC3EB;}
+    #wrap{width: 500px;margin: auto;}
+    .logo{height: 70px;text-align: center;}
+    .box{padding: 30px;background: #FFF;}
+    .box h1{font-size: 24px;text-align: center;}
+    .box .form-box{background: #F1F1F1;margin-top: 15px;padding: 40px 70px;}
+    .box .form-box .layui-input-block{margin-left: 0px;}
+    .box .form-box .layui-input-block input{border-left: 3px solid #E7C699;}
+    </style>
+<script type="text/javascript">
+if (top.location != location){
+    top.location.href = location.href;
+}
+</script>
+</head>
+<body>
+<div id="wrap">
+    <div class="logo">&nbsp;</div>
+    <div class="box">
+        <h1>物流管理系统</h1>
+        <div class="form-box">
+            <form class="layui-form" method="post" action="{:url('Login/index')}">
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                    <input type="text" name="name" lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                    <input type="password" name="password" lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item" style="margin-bottom: 0px;">
+                    <div class="layui-input-block">
+                        <button class="layui-btn layui-btn-normal layui-btn-fluid" lay-submit lay-filter="loginForm">确定登录</button>
+                    </div>
+                </div>
+                <div class="layui-form-item" style="margin-bottom: 0px;">
+                    <label class="layui-form-label" style="text-align: left;display: none;">注册</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{load href="__LAYUI__/layui.js" /}
+<script type="text/javascript">
+//一般直接写在一个js文件中
+layui.use(['layer', 'form'], function(){
+    var layer = layui.layer,
+    form = layui.form;
+    var $ = layui.jquery;
+
+    var common = {
+        enableInit : function(){
+            var winHeight   = $(window).height();
+            var wrapHeight  = $("#wrap").height();
+
+            var topHeight   = (winHeight - wrapHeight - 150)/2;
+            $("#wrap").css({"margin-top":topHeight+'px'});
+        }
+    }
+    form.on('submit(loginForm)', function(data){
+        //console.log(data);
+        //alert(data.form.action);
+        var obj         = data.field;
+        var form_url    = data.form.action;
+        var load = layer.load(2, {
+            shade: [0.1,'#000'] //0.1透明度的白色背景
+        });
+        $.ajax({
+            url         : form_url,
+            type        : 'POST',
+            dataType    : 'json',
+            data        : obj,
+            success     : function(res){
+                layer.close(load);
+                if( res.code == 1 ){
+                    layer.msg(res.msg, {
+                        time: 1000
+                    }, function(){
+                        window.location.href = res.url;
+                    });
+                } else {
+                    layer.alert(res.msg, {icon: 2});
+                }
+            }
+        });
+        return false;
+    });
+    $(document).ready(function() {
+        common.enableInit();
+    });
+});
+</script>
+</body>
+</html>

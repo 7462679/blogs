@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>layout 后台大布局 - Layui</title>
+	{load href="__LAYUI__/css/layui.css" /}
+	{load href="__CSS__/admin/default.css" /}
+<script type="text/javascript">
+var ROOT_URL    = '{$Request.root}';
+var MODULE_NAME = '{$Request.module}';
+var CONTROLLER_NAME = '{$Request.controller}';
+var ACTION_NAME = '{$Request.action}';
+var ADD_LINK    = '{:url($Request.controller.'/add')}';
+var EDIT_LINK   = '{:url($Request.controller.'/edit')}';
+var DEL_LINK    = '{:url($Request.controller.'/del')}';
+var READ_LINK   = '{:url($Request.controller.'/read')}';
+</script>
+</head>
+<body>
+<div class="layui-fluid">
+	<div class="layui-row layui-col-space15">
+		fdsf
+	</div>
+</div>
+</body>
+</html>

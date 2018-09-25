@@ -1,0 +1,26 @@
+{include file="common/header" /}
+<div class="layui-fluid">
+	<div class="layui-card">
+        <div class="layui-card-header">管理员管理</div>
+        <div class="layui-card-body">
+        	<div>
+        		<button class="layui-btn layui-btn-normal layui-btn-sm btn-add"><i class="layui-icon layui-icon-add-1"></i>添加</button>
+				<button class="layui-btn layui-btn-warm layui-btn-sm btn-edit"><i class="layui-icon layui-icon-edit"></i>修改</button>
+				<button class="layui-btn layui-btn-danger layui-btn-sm btn-del"><i class="layui-icon layui-icon-delete"></i>删除</button>
+        	</div>
+        	<table class="layui-table" lay-data="{id:'table-grid', url:'{:url('Admins/index')}', page:false}" lay-filter="table-grid">
+                <thead>
+                <tr>
+                    <th lay-data="{checkbox:true, align:'center', fixed : 'left'}"></th>
+                    <th lay-data="{field:'id', width:80, sort: true, align:'center'}">ID</th>
+                    <th lay-data="{field:'admin_name'}">登录名</th>
+                    <th lay-data="{field:'last_time', align:'center', width:150}">最后登录</th>
+                    <th lay-data="{field:'last_ip', align:'center', width:120}">最后登录IP</th>
+                    <th lay-data="{field:'logins', align:'center', width:100}">登录次数</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+     </div>
+</div>
+{include file="common/footer" /}
