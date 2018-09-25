@@ -1,0 +1,2 @@
+系统使用thinkphp5框架
+前端框架使用layui
