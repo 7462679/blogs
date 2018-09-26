@@ -17,30 +17,64 @@
 </div>
 <div class="layui-container">
     <div class="layui-row layui-col-space15">
-        <div class="layui-col-md8">
+        <div class="layui-col-md9">
             <div class="box">
-                {volist name="arr" id="vv"}
+                {volist name="list" id="vv"}
                 <div class="item">
                     <div class="item-pic"><img src="__IMG__/index/l.jpg" alt=""></div>
                     <div class="item-info">
                         <div class="item-title">
-                            转行做产品经理
+                            <a href="/read-{$vv.id}.html">{$vv.topic}</a>
                         </div>
                         <div class="item-desc">
                             最近气温骤降，秋天真的是要来啦，在这个换季的时候还在纠结要用什么护肤品和化妆品么？今天就带你走进美妆办公室的小姐姐都在用什么单品。最近气温骤降，秋天真的是要来啦，在这个换季的时候还在纠结要用什么护肤品和化妆品么？今天就带你走进美妆办公室的小姐姐都在用什么单品。
                         </div>
                         <div class="item-source">
-                            分类：<a href="">PHP程序</a>
+                            分类：<a href="/cate-{$vv.cate_id}.html">{$vv.cate_name}</a>
                         </div>
                     </div>
                     <div class="item-status">
-                        查看：0
+                        查看：{$vv.views}
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-pic"><img src="__IMG__/index/l.jpg" alt=""></div>
+                    <div class="item-info">
+                        <div class="item-title">
+                            <a href="/read-{$vv.id}.html">{$vv.topic}</a>
+                        </div>
+                        <div class="item-desc">
+                            最近气温骤降，秋天真的是要来啦，在这个换季的时候还在纠结要用什么护肤品和化妆品么？今天就带你走进美妆办公室的小姐姐都在用什么单品。最近气温骤降，秋天真的是要来啦，在这个换季的时候还在纠结要用什么护肤品和化妆品么？今天就带你走进美妆办公室的小姐姐都在用什么单品。
+                        </div>
+                        <div class="item-source">
+                            分类：<a href="/cate-{$vv.cate_id}.html">{$vv.cate_name}</a>
+                        </div>
+                    </div>
+                    <div class="item-status">
+                        查看：{$vv.views}
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-pic"><img src="__IMG__/index/l.jpg" alt=""></div>
+                    <div class="item-info">
+                        <div class="item-title">
+                            <a href="/read-{$vv.id}.html">{$vv.topic}</a>
+                        </div>
+                        <div class="item-desc">
+                            最近气温骤降，秋天真的是要来啦，在这个换季的时候还在纠结要用什么护肤品和化妆品么？今天就带你走进美妆办公室的小姐姐都在用什么单品。最近气温骤降，秋天真的是要来啦，在这个换季的时候还在纠结要用什么护肤品和化妆品么？今天就带你走进美妆办公室的小姐姐都在用什么单品。
+                        </div>
+                        <div class="item-source">
+                            分类：<a href="/cate-{$vv.cate_id}.html">{$vv.cate_name}</a>
+                        </div>
+                    </div>
+                    <div class="item-status">
+                        查看：{$vv.views}
                     </div>
                 </div>
                 {/volist}
             </div>
         </div>
-        <div class="layui-col-md4">
+        <div class="layui-col-md3">
             <div class="box">
                 <div class="hd">
                     <h3>标题标题</h3>
