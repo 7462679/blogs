@@ -7,7 +7,7 @@ use app\common\model\Cate as CateModel;
 use app\common\model\Article as ArticleModel;
 
 class Index extends Common{
-    public function index($cate_id = 0, $limit = 15)
+    public function index($cate_id = 0, $limit = 2)
     {
         $arr    = [];
         for ($i=0; $i < 10; $i++) {
