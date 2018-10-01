@@ -7,7 +7,7 @@ use app\common\model\Cate as CateModel;
 use app\common\model\Article as ArticleModel;
 
 class Index extends Common{
-    public function index($cate_id = 0, $limit = 2)
+    public function index($cate_id = 0, $limit = 20)
     {
         $arr    = [];
         for ($i=0; $i < 10; $i++) {
@@ -49,6 +49,7 @@ class Index extends Common{
         if (empty($vo)) {
             $this->error('不存在此信息');
         }
+        //print_r($vo);
         $this->assign('vo', $vo);
         $this->assign('cate_id', $vo['cate_id']);
         $cate_info  = CateModel::where('id', $vo['cate_id'])->find();

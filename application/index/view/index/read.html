@@ -1,23 +1,7 @@
 {include file="common/header" /}
-<div class="blank-header"><!--站位标签--></div>
-<div class="header">
-	<div class="layui-container">
-		<div class="logo fl">
-			<h1><a href=""><img src="__IMG__/index/logo.png" alt=""></a></h1>
-		</div>
-		<div class="menu">
-			<ul>
-				<li><a href="/"{if 0 == $cate_id} class="cur"{/if}>首页</a></li>
-				{volist name="cate_list" id="vv"}
-				<li><a href="/cate-{$vv.id}.html"{if $vv.id == $cate_id} class="cur"{/if}>{$vv.topic}</a></li>
-				{/volist}
-			</ul>
-		</div>
-	</div>
-</div>
-<div class="layui-container">
+<div class="layui-container" style="margin-top: 25px;">
 	<div class="layui-row layui-col-space15">
-		<div class="layui-col-md9">
+		<div class="layui-col-md12">
 			<div class="box">
 				<div class="page-path">
 					<span class="layui-breadcrumb">
@@ -30,27 +14,13 @@
 					<div class="detail-title">{$vo.topic}</div>
 					<div class="detail-time">时间：{$vo.dateline|date="Y-m-d H:i:s"}</div>
 					<div class="contents">
-						{$vo.contents}
+							{$vo.contents|raw}
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="layui-col-md3">
-			<div class="box">
-				<div class="hd">
-					<h3>标题标题</h3>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
-<div class="layui-fluid" style="padding: 0px;padding-top: 10px;">
-	<div class="footer">
-		<div class="layui-container">
-			<div class="footer-main">
-				fdsf
-			</div>
-		</div>
-	</div>
-</div>
+{load href="__STATIC__/js/prism/prism.css" /}
+{load href="__STATIC__/js/prism/prism.js" /}
 {include file="common/footer" /}

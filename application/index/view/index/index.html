@@ -1,90 +1,30 @@
 {include file="common/header" /}
-<div class="header">
-    <div class="topbar">
-        <div class="layui-container">
-            最近气温骤降，秋天真的是要来啦，在这个换季的时候还在纠结要用什么护肤品和化妆品
-        </div>
-    </div>
-    <div class="nav">
-        <div class="layui-container">
-            <div class="logo fl">
-                <h1><a href=""><img src="__IMG__/index/logo.png" alt=""></a></h1>
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="/"{if 0 == $cate_id} class="cur"{/if}>首页</a></li>
-                    {volist name="cate_list" id="vv"}
-                    <li><a href="/cate-{$vv.id}.html"{if $vv.id == $cate_id} class="cur"{/if}>{$vv.topic}</a></li>
-                    {/volist}
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--
-    <div class="layui-container">
-        <div class="logo fl">
-            <h1><a href=""><img src="__IMG__/index/logo.png" alt=""></a></h1>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="/"{if 0 == $cate_id} class="cur"{/if}>首页</a></li>
-                {volist name="cate_list" id="vv"}
-                <li><a href="/cate-{$vv.id}.html"{if $vv.id == $cate_id} class="cur"{/if}>{$vv.topic}</a></li>
-                {/volist}
-            </ul>
-        </div>
-    </div>-->
-</div>
-<br />
-<div class="layui-container">
+<div class="layui-container" style="margin-top: 25px;">
     <div class="layui-row layui-col-space15">
+        {include file="common/aside" /}
         <div class="layui-col-md9">
-            <div class="layui-carousel" id="test1">
-                <div carousel-item>
-                    <div><img src="http://www.yangqq.com/skin/886/images/1.jpg" style="height: 100%;width: 100%;" alt=""></div>
-                    <div><img src="http://www.yangqq.com/skin/886/images/2.jpg" style="width: 100%;height: 100%" alt=""></div>
-                </div>
-            </div>
-            <div class="notice-box mgt-15">
+            <div class="notice-box">
                 <h2><a href=""><span class="tag">公告</span>这是一个公告标题</a></h2>
                 <div class="contents">
                     微餐时代信息科技有限公司，总部位于深圳南山前海，研发中心位于东莞松山湖，是国内领先的基于云端技术的SaaS餐饮管理软件服务公司。凭借管理者对餐饮行业实体经营的丰富经验，依托IT及互联网技术，打造出集餐饮行业品牌管理体系、服务体系、销售推广体...
                 </div>
             </div>
-            <div class="mgt-15"></div>
             {volist name="list" id="vv"}
             <div class="article-box">
-                <a class="focus" target="_blank" href="/read-{$vv.id}.html"><img src="http://www.daqianduan.com/wp-content/uploads/2018/09/next.jpg" class="thumb"></a>
                 <div class="hd">
-                    <a href="/cate-{$vv.cate_id}.html" class="cate">{$vv.cate_name}<i></i></a>
-                    <h2><a href="/read-{$vv.id}.html">文章的标题</a></h2>
+                    <span class="label">{$vv.cate_name}</span>
+                    <a href="/read-{$vv.id}.html">{$vv.topic}位于深圳南山前海</a>
+                </div>
+                <div class="contents">
+                中国首届React开发者大会于2018年08月18日在广州举办。由w3ctech、前端圈主办。本次大会我们将邀请行业内知名讲师，与大家共聚广州，畅聊React。 点击抢票 演讲嘉宾： 克军 前端布道者、阿里云CSFE前端团队负责人 Vlad...
                 </div>
                 <p class="meta">
                     <time>时间：2018-09-26 10:10</time>
                     <span class="view">查看：100</span>
                 </p>
-                <div class="contents">
-                中国首届React开发者大会于2018年08月18日在广州举办。由w3ctech、前端圈主办。本次大会我们将邀请行业内知名讲师，与大家共聚广州，畅聊React。 点击抢票 演讲嘉宾： 克军 前端布道者、阿里云CSFE前端团队负责人 Vlad...
-                </div>
             </div>
             {/volist}
             <div id="page" data-rule="{total:{$rs.total}, limit :{$rs.limit}, curr : {$rs.current_page}, url : '/cate-{$cate_id}.html'}"></div>
-        </div>
-        <div class="layui-col-md3">
-            <div class="box">
-                <div class="hd">
-                    <h3>标题标题</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="layui-fluid" style="padding: 0px;padding-top: 10px;">
-    <div class="footer">
-        <div class="layui-container">
-            <div class="footer-main">
-                fdsf
-            </div>
         </div>
     </div>
 </div>

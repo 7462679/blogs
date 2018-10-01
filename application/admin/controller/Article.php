@@ -60,11 +60,13 @@ class Article extends Common
             $rule = [
             	'topic'			=> 'require',
             	'cate_id'		=> '>:0',
+                'contents'      => 'require'
             ];
 
             $msg = [
                 'topic.require'        => '请输入文章标题',
                 'cate_id'      			=> '请选择文章类别',
+                'contents.require'      => '请输入文章内容'
             ];
             $validate   = Validate::make($rule,$msg);
             $result = $validate->check($param);
@@ -75,8 +77,6 @@ class Article extends Common
             $data 	= $param;
             $data['dateline']	= time();
             $data['is_post']	= 1;
-            $data['contents']	= $data['editormd-markdown-doc'];
-            unset($data['editormd-markdown-doc']);
             //print_r($param);exit;
             ArticleModel::create($data);
             LogsModel::logs($this->admin_id, $this->admin_info['admin_name'], "新增了文章");
@@ -116,11 +116,13 @@ class Article extends Common
             $rule = [
             	'topic'			=> 'require',
             	'cate_id'		=> '>:0',
+                'contents'      => 'require',
             ];
 
             $msg = [
                 'topic.require'        	=> '请输入文章标题',
                 'cate_id'      			=> '请选择文章类别',
+                'contents.require'      => '请填写文章内容'
             ];
             $validate   = Validate::make($rule,$msg);
             $result = $validate->check($param);
@@ -129,8 +131,6 @@ class Article extends Common
                 $this->error($err);
             }
             $data 	= $param;
-            $data['contents']	= $data['editormd-markdown-doc'];
-            unset($data['editormd-markdown-doc']);
             ArticleModel::where('id', $id)->update($data);
             LogsModel::logs($this->admin_id, $this->admin_info['admin_name'], "修改了文章");
             $this->success('文章修改成功', 'Article/index');

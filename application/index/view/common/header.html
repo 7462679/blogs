@@ -11,3 +11,20 @@ var ROOT_URL    = '{$Request.root}';
 </script>
 </head>
 <body>
+<div class="header">
+    <div class="navigation">
+        <div class="layui-container">
+            <div class="logo fl">
+                <h1><a href=""><img src="__IMG__/index/logo.png" alt=""></a></h1>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/"{if 0 == $cate_id} class="cur"{/if}>首页</a></li>
+                    {volist name="cate_list" id="vv"}
+                    <li><a href="/cate-{$vv.id}.html"{if $vv.id == $cate_id} class="cur"{/if}>{$vv.topic}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
