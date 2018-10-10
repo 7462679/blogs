@@ -13,14 +13,12 @@
             <div class="article-box">
                 <div class="hd">
                     <span class="label">{$vv.cate_name}</span>
-                    <a href="/read-{$vv.id}.html">{$vv.topic}位于深圳南山前海</a>
+                    <a href="/read-{$vv.id}.html">{$vv.topic}</a>
                 </div>
-                <div class="contents">
-                中国首届React开发者大会于2018年08月18日在广州举办。由w3ctech、前端圈主办。本次大会我们将邀请行业内知名讲师，与大家共聚广州，畅聊React。 点击抢票 演讲嘉宾： 克军 前端布道者、阿里云CSFE前端团队负责人 Vlad...
-                </div>
+                <div class="contents">{$vv.brief}</div>
                 <p class="meta">
-                    <time>时间：2018-09-26 10:10</time>
-                    <span class="view">查看：100</span>
+                    <time>时间：{$vv.dateline|date="Y-m-d H:i"}</time>
+                    <span class="view">查看：{$vv.views}</span>
                 </p>
             </div>
             {/volist}

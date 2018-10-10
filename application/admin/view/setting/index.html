@@ -1,0 +1,41 @@
+{include file="common/header" /}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">站点配置</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="{:url('Setting/index')}" method="post">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">站点名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="site_name" value="{$vo.site_name}" required lay-verify="required" placeholder="请输入站点名称"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">简介</label>
+                    <div class="layui-input-block">
+                        <textarea name="description" placeholder="站点的简介" class="layui-textarea">{$vo.description}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">关键字</label>
+                    <div class="layui-input-block">
+                        <textarea name="keywords" placeholder="站点关键字" class="layui-textarea">{$vo.keywords}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">网址</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="site_url" value="{$vo.site_url}" maxlength="20" required lay-verify="required" placeholder="请输入网址"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="btnSub">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{include file="common/footer" /}

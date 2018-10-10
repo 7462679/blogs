@@ -7,6 +7,7 @@ use think\Request;
 use think\facade\Session;
 
 use app\admin\model\Admins as AdminsModel;
+use app\common\model\Setting as SettingModel;
 
 class Common extends Controller
 {
@@ -14,6 +15,7 @@ class Common extends Controller
 	protected $admin_id;
 	protected $admin_info;
 	protected $admin_level;
+	protected $site_info;
 
 	public function __construct( Request $request = null ){
 		parent::__construct();
@@ -25,6 +27,8 @@ class Common extends Controller
 			$this->redirect('login/index');
 		}
 		$this->assign('admin_info', $this->admin_info);
+		$this->site_info 	= $this->getSiteInfo();
+		$this->assign('site_info', $this->site_info);
 	}
 
 	private function checkAuth(){
@@ -39,5 +43,10 @@ class Common extends Controller
 		// 可更新session
 		Session::set('admin',$this->admin_session);
 		return true;
+	}
+
+	private function getSiteInfo(){
+		$vo = SettingModel::find();
+		return $vo;
 	}
 }

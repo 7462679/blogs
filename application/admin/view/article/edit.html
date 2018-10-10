@@ -25,6 +25,12 @@
                     </div>
                 </div>
                 <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">文章简要</label>
+                    <div class="layui-input-block">
+                        <textarea name="brief" placeholder="文章的简要信息" class="layui-textarea">{$vo.brief}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">文章内容</label>
                     <div class="layui-input-block">
                         <textarea name="contents" id="contents" style="width:100%;height:500px;visibility:hidden;">{$vo.contents|raw}</textarea>

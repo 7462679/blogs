@@ -3,20 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>layout 后台大布局 - Layui</title>
+    <title>{$site_info.site_name} - 后台管理</title>
     {load href="__LAYUI__/css/layui.css" /}
     {load href="__CSS__/admin/index.css" /}
-<script type="text/javascript">
-var ROOT_URL    = '{$Request.root}';
-var MODULE_NAME = '{$Request.module}';
-var CONTROLLER_NAME = '{$Request.controller}';
-var ACTION_NAME = '{$Request.action}';
-var ADD_LINK    = '{:url($Request.controller.'/add')}';
-var EDIT_LINK   = '{:url($Request.controller.'/edit')}';
-var DEL_LINK    = '{:url($Request.controller.'/del')}';
-var READ_LINK   = '{:url($Request.controller.'/read')}';
-</script>
+    <script type="text/javascript">
+    var ROOT_URL = '{$Request.root}';
+    var MODULE_NAME = '{$Request.module}';
+    var CONTROLLER_NAME = '{$Request.controller}';
+    var ACTION_NAME = '{$Request.action}';
+    var ADD_LINK = '{:url($Request.controller.' / add ')}';
+    var EDIT_LINK = '{:url($Request.controller.' / edit ')}';
+    var DEL_LINK = '{:url($Request.controller.' / del ')}';
+    var READ_LINK = '{:url($Request.controller.' / read ')}';
+    </script>
 </head>
+
 <body class="layui-layout-body">
     <div class="layui-layout layui-layout-admin">
         <div class="layui-header">
@@ -54,7 +55,7 @@ var READ_LINK   = '{:url($Request.controller.'/read')}';
         <div class="layui-side side-bar">
             <div class="layui-side-scroll">
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-                <ul class="layui-nav layui-nav-tree"  lay-filter="test" lay-shrink="all">
+                <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
                     <li class="layui-nav-item layui-nav-itemed">
                         <a href="javascript:;"><i class="layui-icon layui-icon-read parent-icon"></i>文章</a>
                         <dl class="layui-nav-child">
@@ -76,6 +77,12 @@ var READ_LINK   = '{:url($Request.controller.'/read')}';
                             <dd><a href="javascript:;" class="side-link" data-url="{:url('Admins/index')}" data-target="tab_admins" data-title="管理员"><i class="layui-icon layui-icon-list"></i>管理员管理</a></dd>
                         </dl>
                     </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;"><i class="layui-icon layui-icon-set parent-icon"></i>设置</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" class="side-link" data-url="{:url('Setting/index')}" data-target="tab_setting" data-title="站点配置"><i class="layui-icon layui-icon-list"></i>站点配置</a></dd>
+                        </dl>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -87,7 +94,6 @@ var READ_LINK   = '{:url($Request.controller.'/read')}';
                 </div>
             </div>
         </div>
-
         <div class="layui-footer">
             <div class="layui-icon ctrls layui-icon-prev"></div>
             <div class="layui-icon ctrls layui-icon-refresh"></div>
@@ -96,11 +102,11 @@ var READ_LINK   = '{:url($Request.controller.'/read')}';
             <div style="text-align: center;">© layui.com - 底部固定区域</div>
         </div>
     </div>
-{load href="__LAYUI__/layui.js" /}
-<script type="text/javascript">
-layui.config({
-    base : '__JS__/admin/'
-}).use('index');
-</script>
+    {load href="__LAYUI__/layui.js" /}
+    <script type="text/javascript">
+    layui.config({
+        base: '__JS__/admin/'
+    }).use('index');
+    </script>
 </body>
 </html>
