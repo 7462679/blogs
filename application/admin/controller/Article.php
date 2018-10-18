@@ -87,16 +87,6 @@ class Article extends Common
 			return $this->fetch();
 		}
 	}
-	/**
-	 * 显示指定的资源
-	 *
-	 * @param  int  $id
-	 * @return \think\Response
-	 */
-	public function read($id)
-	{
-		//
-	}
 
 	/**
 	 * 显示编辑资源表单页.
@@ -142,26 +132,13 @@ class Article extends Common
 		}
 	}
 
-	/**
-	 * 保存更新的资源
-	 *
-	 * @param  \think\Request  $request
-	 * @param  int  $id
-	 * @return \think\Response
-	 */
-	public function update(Request $request, $id)
-	{
-		//
-	}
-
-	/**
-	 * 删除指定资源
-	 *
-	 * @param  int  $id
-	 * @return \think\Response
-	 */
-	public function delete($id)
-	{
-		//
-	}
+    public function del($id){
+        $ids        = trim($id);
+        if (empty($ids)) {
+            $this->error('参数有误');
+        }
+        ArticleModel::destroy($ids);
+        LogsModel::logs($this->admin_id, $this->admin_info['admin_name'], "进行了删除文章的操作。删除的ID为：{{$ids}}");
+        $this->success('文章删除成功', 'Article/index');
+    }
 }
