@@ -15,6 +15,7 @@
                             <th lay-data="{checkbox:true, align:'center', fixed : 'left'}"></th>
                             <th lay-data="{field:'id', width:80, sort: true, align:'center'}">ID</th>
                             <th lay-data="{field:'topic'}">类别名称</th>
+                            <th lay-data="{width : 80, align:'center', toolbar:'#table-bar'}">背景</th>
                             <th lay-data="{field:'sort_id', align:'center', width:100}">排序</th>
                         </tr>
                         </thead>
@@ -51,4 +52,7 @@
         </div>
     </div>
 </div>
+<script type="text/html" id="table-bar">
+    <div style="display: inline-block;background:{{d.color}};width: 35px;">&nbsp;</div>
+</script>
 {include file="common/footer" /}

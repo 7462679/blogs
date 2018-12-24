@@ -1,5 +1,49 @@
 {include file="common/header" /}
-<div class="layui-container" style="margin-top: 25px;">
+<div class="layui-container" style="margin-top: 100px;padding: 0px;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md8">
+            <div class="box-common focus">
+                <div class="layui-carousel" id="test10">
+                    <div carousel-item="">
+                        <div><img src="http://www.wustudy.com/static/img/index/logo.png" /></div>
+                        <div><img src="http://www.wustudy.com/static/img/index/logo.png" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">随机心情</div>
+                <div class="layui-card-body" style="height: 146px;">
+                    fdsf
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md12" style="margin-top: 30px;">
+            {volist name="list" id="vv"}
+            <div class="list-box">
+                <div class="tag" style="background:{$vv.cate_info.color};">{$vv.cate_name}</div>
+                <div class="pic">
+                    fdsf
+                </div>
+                <div class="content">
+                    <h6 class="topic"><a href="/read-{$vv.id}.html">{$vv.topic}</a></h6>
+                    <div class="desc">
+                        {$vv.brief}
+                    </div>
+                    <div class="meta">
+                        <time>时间：{$vv.dateline|date="Y-m-d H:i"}</time>
+                        <span class="view">查看：{$vv.views}</span>
+                    </div>
+                    <a href="" class="layui-btn layui-btn-danger read-more"><i class="layui-icon">&#xe705;</i>查看详情</a>
+                </div>
+            </div>
+            {/volist}
+            <div class="list-box">
+                fdsf
+            </div>
+        </div>
+    </div>
     <div class="layui-row layui-col-space15">
         {include file="common/aside" /}
         <div class="layui-col-md9">

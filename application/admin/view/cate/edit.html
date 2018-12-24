@@ -3,7 +3,7 @@
     <div class="layui-card">
         <div class="layui-card-header">修改类别</div>
         <div class="layui-card-body">
-            <form class="layui-form" action="{:url('Cate/edit?id='.$vo['id'])}" method="post">
+            <form class="layui-form layui-form-pane" action="{:url('Cate/edit?id='.$vo['id'])}" method="post">
                 <div class="layui-form-item">
                     <label class="layui-form-label">类别名称</label>
                     <div class="layui-input-block">
@@ -14,6 +14,15 @@
                     <label class="layui-form-label">排序</label>
                     <div class="layui-input-block">
                         <input type="text" name="sort_id" value="{$vo.sort_id}" maxlength="20" required lay-verify="required" placeholder="请输入排序ID"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">颜色</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="color" id="color" value="{$vo.color}" maxlength="20" required lay-verify="required" placeholder="设置颜色值"  autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-inline" style="left: -11px;">
+                        <div class="colorpicker" id="color-set" data-set="color"></div>
                     </div>
                 </div>
                 <div class="layui-form-item">

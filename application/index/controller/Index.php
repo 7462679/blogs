@@ -29,8 +29,10 @@ class Index extends Common{
                     $cate_name  = $cate_info['topic'];
                 } else {
                     $cate_name  = CateModel::where('id', $vv['cate_id'])->value('topic');
+                    $cate_info  = CateModel::where('id', $vv['cate_id'])->find();
                 }
                 $list[$key]['cate_name']    = $cate_name;
+                $list[$key]['cate_info']    = $cate_info;
             }
         }
         $this->assign('list', $list);
